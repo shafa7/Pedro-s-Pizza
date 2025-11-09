@@ -11,3 +11,14 @@ body {
   margin: 0;
 }
 
+* {
+  box-sizing: border-box; /* Crucial: Ensures padding and borders are included in the element's total width and height, preventing overflow */
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrolling caused by elements that slightly exceed the width */
+}

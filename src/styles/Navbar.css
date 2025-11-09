@@ -3,11 +3,12 @@
   height: 100px;
   background-color: #121619;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
 }
 
 .navbar .leftSide {
-  flex: 50%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -19,84 +20,141 @@
 }
 
 .navbar .rightSide {
-  flex: 50%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding-right: 50px;
 }
 
-.navbar a {
+/* Default state for main navigation links (Desktop) */
+.navbar .rightSide .mainLinks a {
   color: white;
   text-decoration: none;
-  margin: 20px;
+  margin: 0 20px;
+  font-size: 16px;
+  transition: color 0.3s;
+  position: relative;
 }
 
-.navbar .rightSide button {
-  background-color: transparent;
+/* Active Link Styling */
+.navbar .rightSide .mainLinks a.activeLink {
+  color: #ff4d00; /* Highlight color */
+  font-weight: bold;
+}
+
+.navbar .rightSide .mainLinks a.activeLink::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff4d00;
+}
+
+
+/* Hamburger Button - Hidden by default on desktop */
+.navbar .rightSide .hamburgerBtn {
+  display: none;
+  background: none;
   border: none;
-  color: white;
   cursor: pointer;
+  padding: 10px;
 }
 
-.navbar .rightSide svg {
-  font-size: 40px;
+.navbar .rightSide .hamburgerBtn svg {
+  color: white;
+  font-size: 30px;
 }
 
-.navbar #open {
-  padding-left: 0px;
-}
-.navbar #open img {
-  display: none;
+/* Mobile/Tablet Hidden Menu (Default state - closed) */
+.navbar .rightSide .hiddenLinks {
+  display: flex; /* Keep display flex to allow transform to work */
+  flex-direction: column;
+  position: fixed;
+  top: 100px; 
+  right: 0;
+  width: 70%; /* Mobile menu width */
+  max-width: 300px;
+  height: calc(100vh - 100px);
+  background-color: #121619;
+  z-index: 100;
+  align-items: center;
+  justify-content: flex-start; /* Align links to top */
+  padding-top: 50px;
+  
+  /* Start off-screen (right side) */
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
 }
 
-.navbar #close img {
-  display: inherit;
+/* Open State: Slide in */
+.navbar .rightSide #open {
+  transform: translateX(0);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
 }
 
-.navbar #open .hiddenLinks {
-  display: inherit;
-  margin-left: 30px;
+/* Individual Links in Mobile Menu (Animation) */
+.navbar .rightSide .hiddenLinks a {
+  margin: 15px 0;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  width: 80%;
+  text-align: center;
+  transition: color 0.3s;
+
+  /* Staggering setup */
+  transform: translateX(50px); /* Start slightly off-screen inside menu */
+  opacity: 0;
 }
 
-.navbar #close .hiddenLinks {
-  display: none;
+.navbar .rightSide #open a {
+  /* Only apply slide-in animation when the menu is open */
+  animation: slideInLink 0.5s forwards ease-out; 
 }
 
-.navbar #open a {
-  width: 70px;
-  margin: 5px;
+/* Active Link Styling for Mobile */
+.navbar .rightSide .hiddenLinks a.activeLink {
+  color: #ff4d00;
 }
-@media only screen and (max-width: 900px) {
-  .navbar .rightSide a {
-    width: 70px;
+
+
+/* Keyframes for Staggered Link Animation */
+@keyframes slideInLink {
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
+}
+
+/* --- MEDIA QUERIES (Tablet and Phone) --- */
+
+@media only screen and (max-width: 900px) {
   .navbar .leftSide {
-    padding-left: 50px;
+    padding-left: 20px;
+  }
+  .navbar .rightSide {
+    padding-right: 20px;
+  }
+  
+  /* Hide main desktop links */
+  .navbar .rightSide .mainLinks {
+    display: none;
+  }
+
+  /* Show the hamburger button */
+  .navbar .rightSide .hamburgerBtn {
+    display: block;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .navbar .rightSide a {
-    display: none;
+  .navbar .leftSide img {
+    width: 50px;
   }
-
-  .navbar .rightSide {
-    justify-content: flex-end;
-    padding-right: 50px;
-  }
-
-  .navbar .rightSide button {
-    display: inherit;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .navbar .rightSide button {
-    display: none;
-  }
-
-  .hiddenLinks {
-    display: none;
+  .navbar .rightSide .hiddenLinks {
+    width: 100%; /* Full width menu on small phones */
+    max-width: none;
   }
 }
