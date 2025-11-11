@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/shafa7/Pedro-s-Pizza/static/css/main.653a4865.css",
+    "main.js": "/shafa7/Pedro-s-Pizza/static/js/main.dcb65edd.js",
+    "static/js/453.ff57868c.chunk.js": "/shafa7/Pedro-s-Pizza/static/js/453.ff57868c.chunk.js",
+    "static/media/pizzaLeft.jpg": "/shafa7/Pedro-s-Pizza/static/media/pizzaLeft.24b07891fef1c8dae848.jpg",
+    "static/media/vegan.jpg": "/shafa7/Pedro-s-Pizza/static/media/vegan.52cbfe9e6f8d75e18f8b.jpg",
+    "static/media/pizza.jpeg": "/shafa7/Pedro-s-Pizza/static/media/pizza.21a1098fa87e28d80f37.jpeg",
+    "static/media/multiplePizzas.jpeg": "/shafa7/Pedro-s-Pizza/static/media/multiplePizzas.490709e2113d96ca24a1.jpeg",
+    "static/media/pizzaLogo.png": "/shafa7/Pedro-s-Pizza/static/media/pizzaLogo.fcdc67e6b331cba63735.png",
+    "static/media/expensive.jpg": "/shafa7/Pedro-s-Pizza/static/media/expensive.6449ceefce083d18dfef.jpg",
+    "static/media/pepperoni.jpg": "/shafa7/Pedro-s-Pizza/static/media/pepperoni.d173e5db8dacdf1324ed.jpg",
+    "static/media/pineapple.jpg": "/shafa7/Pedro-s-Pizza/static/media/pineapple.a01ab9be389f0e6bd6ec.jpg",
+    "static/media/margherita.jpg": "/shafa7/Pedro-s-Pizza/static/media/margherita.683bc9bb07f9ff0d82df.jpg",
+    "static/media/pedrotechspecial.jpg": "/shafa7/Pedro-s-Pizza/static/media/pedrotechspecial.425951cb0e484775fd4c.jpg",
+    "index.html": "/shafa7/Pedro-s-Pizza/index.html",
+    "main.653a4865.css.map": "/shafa7/Pedro-s-Pizza/static/css/main.653a4865.css.map",
+    "main.dcb65edd.js.map": "/shafa7/Pedro-s-Pizza/static/js/main.dcb65edd.js.map",
+    "453.ff57868c.chunk.js.map": "/shafa7/Pedro-s-Pizza/static/js/453.ff57868c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.653a4865.css",
+    "static/js/main.dcb65edd.js"
+  ]
+}
